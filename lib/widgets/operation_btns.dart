@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
+import 'package:calc_task_bloc/bloc/calculator_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OperationBtns extends StatelessWidget {
   const OperationBtns({super.key});
@@ -45,7 +47,11 @@ class OperationBtns extends StatelessWidget {
                         width: 50,
                         height: 50,
                         child: TextButton(
-                          onPressed: () {},
+                          // todo increment
+                          onPressed: () {
+                            BlocProvider.of<CalculatorBloc>(context)
+                                .add(IncreamentEvent1());
+                          },
                           child: Center(
                               child: Text(
                             '+',
@@ -65,7 +71,11 @@ class OperationBtns extends StatelessWidget {
                         width: 50,
                         height: 50,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            //  todo decrement number 1
+                            BlocProvider.of<CalculatorBloc>(context)
+                                .add(DcrementEvent1());
+                          },
                           child: Center(
                               child: Text(
                             '-',
@@ -92,7 +102,10 @@ class OperationBtns extends StatelessWidget {
                       color: Color(0xffc4c6c3),
                       borderRadius: BorderRadius.circular(16)),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // todo addition
+                      BlocProvider.of<CalculatorBloc>(context).add(AddEvent());
+                    },
                     child: Text(
                       'Addition (+)',
                       style: TextStyle(
@@ -118,7 +131,11 @@ class OperationBtns extends StatelessWidget {
                       color: Color(0xffc4c6c3),
                       borderRadius: BorderRadius.circular(16)),
                   child: TextButton(
-                    onPressed: () {},
+                    // todo subtract
+                    onPressed: () {
+                      BlocProvider.of<CalculatorBloc>(context)
+                          .add(SubstractionEvent());
+                    },
                     child: Text(
                       'Substraction (-)',
                       style: TextStyle(
@@ -144,7 +161,11 @@ class OperationBtns extends StatelessWidget {
                       color: Color(0xffc4c6c3),
                       borderRadius: BorderRadius.circular(16)),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // todo multiply
+                      BlocProvider.of<CalculatorBloc>(context)
+                          .add(MultiplyEvent());
+                    },
                     child: Text(
                       'Multiple (*)',
                       style: TextStyle(
@@ -170,7 +191,11 @@ class OperationBtns extends StatelessWidget {
                       color: Color(0xffc4c6c3),
                       borderRadius: BorderRadius.circular(16)),
                   child: TextButton(
-                    onPressed: () {},
+                    // todo divide event
+                    onPressed: () {
+                      BlocProvider.of<CalculatorBloc>(context)
+                          .add(DevisionEvent());
+                    },
                     child: Text(
                       'Division (/)',
                       style: TextStyle(
@@ -194,13 +219,18 @@ class OperationBtns extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
+                          color: Color(0xff9a6435),
                         ),
                       ),
                       Container(
                         width: 50,
                         height: 50,
                         child: TextButton(
-                          onPressed: () {},
+                          // todo increment number 2
+                          onPressed: () {
+                            BlocProvider.of<CalculatorBloc>(context)
+                                .add(IncreamentEvent2());
+                          },
                           child: Center(
                               child: Text(
                             '+',
@@ -220,7 +250,11 @@ class OperationBtns extends StatelessWidget {
                         width: 50,
                         height: 50,
                         child: TextButton(
-                          onPressed: () {},
+                          // todo decrement number 2
+                          onPressed: () {
+                            BlocProvider.of<CalculatorBloc>(context)
+                                .add(DcrementEvent2());
+                          },
                           child: Center(
                               child: Text(
                             '-',

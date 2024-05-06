@@ -1,4 +1,6 @@
+import 'package:calc_task_bloc/bloc/calculator_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ResetBtn extends StatelessWidget {
   const ResetBtn({super.key});
@@ -19,7 +21,10 @@ class ResetBtn extends StatelessWidget {
               borderRadius: BorderRadius.circular(14),
             ),
             child: TextButton(
-              onPressed: () {},
+              // todo reset
+              onPressed: () {
+                BlocProvider.of<CalculatorBloc>(context).add(ResetEvent());
+              },
               child: const Center(
                   child: Text(
                 'Reset',

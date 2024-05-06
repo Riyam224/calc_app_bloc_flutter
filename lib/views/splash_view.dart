@@ -19,7 +19,7 @@ class _SplashViewState extends State<SplashView> {
     Timer(const Duration(seconds: 10), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => const HomeView(),
+          builder: (context) => HomeView(),
         ),
       );
     });
